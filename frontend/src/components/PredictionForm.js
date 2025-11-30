@@ -7,46 +7,114 @@ const PredictionForm = ({ formData, setFormData, onSubmit }) => {
   };
 
   return (
-    <form onSubmit={onSubmit} style={{ maxWidth: 700 }}>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 12 }}>
+    <form onSubmit={onSubmit}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: '1.25rem' }}>
+
+        {/* Crop */}
         <div>
-          <label>Crop</label><br />
-          <input name="Crop" value={formData.Crop} onChange={handleChange} placeholder="eg. rice" required />
+          <label>🌾 Crop Type</label>
+          <input
+            name="Crop"
+            value={formData.Crop}
+            onChange={handleChange}
+            placeholder="e.g., Rice, Wheat"
+            required
+          />
         </div>
 
+        {/* State */}
         <div>
-          <label>State</label><br />
-          <input name="State" value={formData.State} onChange={handleChange} placeholder="eg. maharashtra" required />
+          <label>📍 State</label>
+          <input
+            name="State"
+            value={formData.State}
+            onChange={handleChange}
+            placeholder="e.g., Maharashtra"
+            required
+          />
         </div>
 
+        {/* Season */}
         <div>
-          <label>Season</label><br />
-          <input name="Season" value={formData.Season} onChange={handleChange} placeholder="kharif / rabi" required />
+          <label>🌤️ Season</label>
+          <input
+            name="Season"
+            value={formData.Season}
+            onChange={handleChange}
+            placeholder="Kharif / Rabi / Whole Year"
+            required
+          />
         </div>
 
-
+        {/* Annual Rainfall */}
         <div>
-          <label>Annual_Rainfall (mm)</label><br />
-          <input type="number" step="any" name="Annual_Rainfall" value={formData.Annual_Rainfall} onChange={handleChange} required />
+          <label>🌧️ Annual Rainfall (mm)</label>
+          <input
+            type="number"
+            step="any"
+            name="Annual_Rainfall"
+            value={formData.Annual_Rainfall}
+            onChange={handleChange}
+            placeholder="e.g., 1000"
+            required
+          />
         </div>
 
+        {/* Fertilizer */}
         <div>
-          <label>Fertilizer</label><br />
-          <input type="number" step="any" name="Fertilizer" value={formData.Fertilizer} onChange={handleChange} required />
+          <label>🧪 Fertilizer (kg/hectare)</label>
+          <input
+            type="number"
+            step="any"
+            name="Fertilizer"
+            value={formData.Fertilizer}
+            onChange={handleChange}
+            placeholder="e.g., 120"
+            required
+          />
         </div>
 
+        {/* Pesticide */}
         <div>
-          <label>Pesticide</label><br />
-          <input type="number" step="any" name="Pesticide" value={formData.Pesticide} onChange={handleChange} required />
+          <label>🛡️ Pesticide (kg/hectare)</label>
+          <input
+            type="number"
+            step="any"
+            name="Pesticide"
+            value={formData.Pesticide}
+            onChange={handleChange}
+            placeholder="e.g., 0.5"
+            required
+          />
         </div>
 
       </div>
 
-      <div style={{ marginTop: 12 }}>
-        <button type="submit" style={{ padding: "8px 16px", background: "#2b7a0b", color: "white", border: "none", borderRadius: 6 }}>
-          Predict Yield
+      {/* Submit Button */}
+      <div style={{ marginTop: '2rem' }}>
+        <button
+          type="submit"
+          style={{
+            width: '100%',
+            fontSize: '1.05rem',
+            fontWeight: 600,
+            letterSpacing: '0.5px'
+          }}
+        >
+          🚀 Predict Crop Yield
         </button>
       </div>
+
+      {/* Helper Text */}
+      <p style={{
+        marginTop: '1rem',
+        fontSize: '0.85rem',
+        color: '#666',
+        textAlign: 'center',
+        fontStyle: 'italic'
+      }}>
+        💡 All fields are required for accurate predictions
+      </p>
     </form>
   );
 };
