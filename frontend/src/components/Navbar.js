@@ -1,108 +1,129 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinkStyle = (path) => ({
+    color: "white",
+    textDecoration: 'none',
+    fontWeight: 500,
+    fontSize: '1rem',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    padding: '0.6rem 1.25rem',
+    borderRadius: '10px',
+    position: 'relative',
+    display: 'inline-block',
+    background: location.pathname === path ? 'rgba(255, 255, 255, 0.2)' : 'transparent'
+  });
+
+  const NavLink = ({ to, icon, children }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+      <Link
+        to={to}
+        style={navLinkStyle(to)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <span style={{
+          display: 'inline-block',
+          transition: 'transform 0.3s ease',
+          transform: isHovered ? 'translateY(-2px)' : 'translateY(0)'
+        }}>
+          {icon} {children}
+        </span>
+        <div style={{
+          position: 'absolute',
+          bottom: '4px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: isHovered ? '70%' : '0%',
+          height: '2px',
+          background: 'linear-gradient(90deg, transparent, #fcd34d, transparent)',
+          transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          borderRadius: '2px'
+        }} />
+      </Link>
+    );
+  };
+
   return (
-    <nav style={{
-      background: 'linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%)',
+    <nav className="fade-in-down" style={{
+      background: scrolled
+        ? 'rgba(45, 80, 22, 0.95)'
+        : 'linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%)',
       color: "white",
-      padding: "1rem 2rem",
+      padding: scrolled ? "0.75rem 2rem" : "1rem 2rem",
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      boxShadow: '0 4px 16px rgba(45, 80, 22, 0.2)',
+      boxShadow: scrolled
+        ? '0 8px 32px rgba(45, 80, 22, 0.3)'
+        : '0 4px 16px rgba(45, 80, 22, 0.2)',
       position: 'sticky',
       top: 0,
       zIndex: 1000,
-      backdropFilter: 'blur(10px)'
+      backdropFilter: 'blur(20px) saturate(180%)',
+      borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
     }}>
       {/* Logo/Brand */}
-      <div style={{
-        fontWeight: "700",
-        fontSize: '1.5rem',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '0.5rem',
-        fontFamily: 'Poppins, sans-serif'
-      }}>
-        <span style={{ fontSize: '1.8rem' }}>🌾</span>
-        <span>AgriYield AI</span>
-      </div>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <div style={{
+          fontWeight: "800",
+          fontSize: scrolled ? '1.35rem' : '1.5rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.6rem',
+          fontFamily: 'Poppins, sans-serif',
+          color: 'white',
+          transition: 'all 0.3s ease',
+          cursor: 'pointer'
+        }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.05)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+          }}
+        >
+          <span style={{
+            fontSize: scrolled ? '1.6rem' : '1.8rem',
+            animation: 'pulse 2s ease-in-out infinite'
+          }}>
+            🌾
+          </span>
+          <span style={{
+            background: 'linear-gradient(135deg, #ffffff 0%, #fcd34d 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
+            AgriYield AI
+          </span>
+        </div>
+      </Link>
 
       {/* Navigation Links */}
       <div style={{
         display: 'flex',
-        gap: '2rem',
+        gap: '1.5rem',
         alignItems: 'center'
       }}>
-        <Link
-          to="/"
-          style={{
-            color: "white",
-            textDecoration: 'none',
-            fontWeight: 500,
-            fontSize: '1rem',
-            transition: 'all 0.3s ease',
-            padding: '0.5rem 1rem',
-            borderRadius: '8px'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.background = 'rgba(255, 255, 255, 0.15)';
-            e.target.style.transform = 'translateY(-2px)';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.background = 'transparent';
-            e.target.style.transform = 'translateY(0)';
-          }}
-        >
-          🎯 Predict
-        </Link>
-
-        <Link
-          to="/dashboard"
-          style={{
-            color: "white",
-            textDecoration: 'none',
-            fontWeight: 500,
-            fontSize: '1rem',
-            transition: 'all 0.3s ease',
-            padding: '0.5rem 1rem',
-            borderRadius: '8px'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.background = 'rgba(255, 255, 255, 0.15)';
-            e.target.style.transform = 'translateY(-2px)';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.background = 'transparent';
-            e.target.style.transform = 'translateY(0)';
-          }}
-        >
-          📊 Dashboard
-        </Link>
-
-        <Link
-          to="/about"
-          style={{
-            color: "white",
-            textDecoration: 'none',
-            fontWeight: 500,
-            fontSize: '1rem',
-            transition: 'all 0.3s ease',
-            padding: '0.5rem 1rem',
-            borderRadius: '8px'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.background = 'rgba(255, 255, 255, 0.15)';
-            e.target.style.transform = 'translateY(-2px)';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.background = 'transparent';
-            e.target.style.transform = 'translateY(0)';
-          }}
-        >
-          ℹ️ About
-        </Link>
+        <NavLink to="/" icon="🎯">Predict</NavLink>
+        <NavLink to="/dashboard" icon="📊">Dashboard</NavLink>
+        <NavLink to="/about" icon="ℹ️">About</NavLink>
       </div>
     </nav>
   );
