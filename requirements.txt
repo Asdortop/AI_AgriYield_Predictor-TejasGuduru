@@ -1,4 +1,5 @@
 flask
+flask-cors
 fastapi
 uvicorn
 pandas 
@@ -8,3 +9,4 @@ shap
 joblib
 matplotlib
 seaborn
+gunicorn
