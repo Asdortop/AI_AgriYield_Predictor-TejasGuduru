@@ -13,18 +13,8 @@ from utils.shap_explain import explain_shap
 app = Flask(__name__)
 
 # Configure CORS explicitly
-CORS(app, resources={
-    r"/*": {
-        "origins": [
-            "https://ai-agriyield-predictor-frontend.onrender.com",
-            "http://localhost:3000",  # For local development
-            "http://127.0.0.1:3000"
-        ],
-        "methods": ["GET", "POST", "OPTIONS"],
-        "allow_headers": ["Content-Type"],
-        "supports_credentials": True
-    }
-})
+# Allow CORS from all origins (simple and permissive)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # ----------------------------
 # Health Check Endpoint
