@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PredictionForm from "../components/PredictionForm";
 import ResultCard from "../components/ResultCard";
-import FeatureImportanceChart from "../components/FeatureImportanceChart";
 import ParticleBackground from "../components/ParticleBackground";
 import api from "../utils/api";
 
@@ -16,7 +15,6 @@ const Predict = () => {
   });
 
   const [result, setResult] = useState(null);
-  const [shapSummary, setShapSummary] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -27,18 +25,8 @@ const Predict = () => {
     setResult(null);
 
     try {
-      const res = await api.post("/predict_shap", formData);
-
+      const res = await api.post("/predict", formData);
       setResult(res.data.predicted_yield);
-
-      const shap = res.data.shap || [];
-      const summary = shap.map((s) => ({
-        feature: s.feature,
-        mean_abs_shap: Math.abs(s.shap_value || s.abs_shap || 0)
-      }));
-
-      setShapSummary(summary);
-      localStorage.setItem("last_shap_summary", JSON.stringify(summary));
 
     } catch (err) {
       console.error(err);
@@ -143,32 +131,7 @@ const Predict = () => {
                 </div>
               </div>
             ) : (
-              <ResultCard
-                prediction={result}
-                shap={shapSummary?.map(s => ({
-                  feature: s.feature,
-                  shap_value: s.mean_abs_shap
-                }))}
-              />
-            )}
-
-            {shapSummary && shapSummary.length > 0 && (
-              <div className="mt-4 fade-in-up delay-3">
-                <h3 style={{
-                  marginBottom: '1rem',
-                  color: '#2d5016'
-                }}>
-                  🎯 Feature Importance Analysis
-                </h3>
-                <p style={{
-                  color: '#6b7280',
-                  fontSize: '0.9rem',
-                  marginBottom: '1.5rem'
-                }}>
-                  Factors that influenced this prediction
-                </p>
-                <FeatureImportanceChart summary={shapSummary} />
-              </div>
+              <ResultCard prediction={result} />
             )}
           </div>
         </div>

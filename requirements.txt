@@ -2,10 +2,9 @@ flask
 flask-cors
 fastapi
 uvicorn
-pandas 
+pandas
 scikit-learn
-numpy 
-shap
+numpy
 joblib
 matplotlib
 seaborn

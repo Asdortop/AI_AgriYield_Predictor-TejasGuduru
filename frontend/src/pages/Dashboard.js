@@ -1,54 +1,40 @@
-import React, { useEffect, useState } from "react";
-import FeatureImportanceChart from "../components/FeatureImportanceChart";
+import React from "react";
 
 const Dashboard = () => {
-  const [summary, setSummary] = useState(null);
-
-  useEffect(() => {
-    const s = localStorage.getItem("last_shap_summary");
-    if (s) {
-      try {
-        setSummary(JSON.parse(s));
-      } catch (e) {
-        setSummary(null);
-      }
-    }
-  }, []);
-
-  const clearSummary = () => {
-    localStorage.removeItem("last_shap_summary");
-    setSummary(null);
-  };
-
   return (
-    <div>
-      <h2>Dashboard</h2>
-      <p>Shows last prediction's SHAP importance (saved locally).</p>
+    <div style={{
+      maxWidth: '1200px',
+      margin: '0 auto',
+      padding: '2rem'
+    }}>
+      <h2 style={{
+        fontSize: '2.5rem',
+        color: '#2d5016',
+        marginBottom: '1rem'
+      }}>
+        📊 Dashboard
+      </h2>
+      <p style={{
+        fontSize: '1.1rem',
+        color: '#6b7280',
+        marginBottom: '2rem'
+      }}>
+        Welcome to your crop yield prediction dashboard!
+      </p>
 
-      {summary ? (
-        <>
-          <FeatureImportanceChart summary={summary} />
-          <div style={{ marginTop: 12 }}>
-            <button 
-              onClick={clearSummary} 
-              style={{ 
-                padding: "8px 12px", 
-                background: "#c0392b", 
-                color: "white", 
-                border: "none", 
-                borderRadius: 6 
-              }}
-            >
-              Clear saved SHAP
-            </button>
-          </div>
-        </>
-      ) : (
-        <p>No saved SHAP summary found. Make a prediction first on the Predict page to populate this dashboard.</p>
-      )}
+      <div style={{
+        background: 'linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(248,253,245,0.9) 100%)',
+        borderRadius: '20px',
+        padding: '2rem',
+        boxShadow: '0 8px 32px rgba(45, 80, 22, 0.16)',
+        border: '1px solid rgba(74, 124, 44, 0.2)'
+      }}>
+        <p style={{ color: '#4a7c2c', fontSize: '1rem' }}>
+          Use the <strong>Predict</strong> tab to make crop yield predictions using our advanced machine learning model.
+        </p>
+      </div>
     </div>
   );
 };
 
 export default Dashboard;
-
