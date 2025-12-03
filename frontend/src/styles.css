@@ -830,463 +830,438 @@ button:disabled {
     padding: 1.5rem;
   }
 
-  .result-value {
-    font-size: 2.75rem;
+  .fade-in-down {
+    animation: fadeInDown 0.6s var(--ease-smooth);
   }
 
-  .result-card {
-    padding: 2rem;
+  .slide-in-left {
+    animation: slideInLeft 0.5s var(--ease-smooth);
   }
 
-  button {
-    padding: 14px 28px;
-    font-size: 0.95rem;
+  .slide-in-right {
+    animation: slideInRight 0.5s var(--ease-smooth);
   }
 
-  input,
-  select,
-  textarea {
+  .scale-in {
+    animation: fadeInScale 0.5s var(--ease-bounce);
+  }
 
-    /* Animation Utility Classes */
-    .fade-in {
-      animation: fadeIn 0.5s var(--ease-smooth);
-    }
+  .pulse {
+    animation: pulse 2s ease-in-out infinite;
+  }
 
-    .fade-in-up {
-      animation: fadeInUp 0.6s var(--ease-smooth);
-    }
+  .bounce {
+    animation: bounce 1s ease-in-out infinite;
+  }
 
-    .fade-in-down {
-      animation: fadeInDown 0.6s var(--ease-smooth);
-    }
+  .glow {
+    animation: glow 2s ease-in-out infinite;
+  }
 
-    .slide-in-left {
-      animation: slideInLeft 0.5s var(--ease-smooth);
-    }
+  /* Stagger Delays */
+  .delay-1 {
+    animation-delay: 0.1s;
+  }
 
-    .slide-in-right {
-      animation: slideInRight 0.5s var(--ease-smooth);
-    }
+  .delay-2 {
+    animation-delay: 0.2s;
+  }
 
-    .scale-in {
-      animation: fadeInScale 0.5s var(--ease-bounce);
-    }
+  .delay-3 {
+    animation-delay: 0.3s;
+  }
 
-    .pulse {
-      animation: pulse 2s ease-in-out infinite;
-    }
+  .delay-4 {
+    animation-delay: 0.4s;
+  }
 
-    .bounce {
-      animation: bounce 1s ease-in-out infinite;
-    }
+  .delay-5 {
+    animation-delay: 0.5s;
+  }
 
-    .glow {
-      animation: glow 2s ease-in-out infinite;
-    }
-
-    /* Stagger Delays */
-    .delay-1 {
-      animation-delay: 0.1s;
-    }
-
-    .delay-2 {
-      animation-delay: 0.2s;
-    }
-
-    .delay-3 {
-      animation-delay: 0.3s;
-    }
-
-    .delay-4 {
-      animation-delay: 0.4s;
-    }
-
-    .delay-5 {
-      animation-delay: 0.5s;
-    }
-
-    /* ========================================
+  /* ========================================
    SCROLLBAR STYLING
    ======================================== */
 
-    ::-webkit-scrollbar {
-      width: 12px;
-      height: 12px;
-    }
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
 
-    ::-webkit-scrollbar-track {
-      background: #f1f5f9;
-      border-radius: 10px;
-    }
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+  }
 
-    ::-webkit-scrollbar-thumb {
-      background: var(--gradient-primary);
-      border-radius: 10px;
-      border: 2px solid #f1f5f9;
-    }
+  ::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border-radius: 10px;
+    border: 2px solid #f1f5f9;
+  }
 
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--primary-green-dark);
-    }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-green-dark);
+  }
 
-    /* ========================================
+  /* ========================================
    UTILITY CLASSES
    ======================================== */
 
-    .text-center {
-      text-align: center;
-    }
+  .text-center {
+    text-align: center;
+  }
 
-    .text-left {
-      text-align: left;
-    }
+  .text-left {
+    text-align: left;
+  }
 
-    .text-right {
-      text-align: right;
-    }
+  .text-right {
+    text-align: right;
+  }
 
-    .mt-1 {
-      margin-top: 0.5rem;
-    }
+  .mt-1 {
+    margin-top: 0.5rem;
+  }
 
-    .mt-2 {
-      margin-top: 1rem;
-    }
+  .mt-2 {
+    margin-top: 1rem;
+  }
 
-    .mt-3 {
-      margin-top: 1.5rem;
-    }
+  .mt-3 {
+    margin-top: 1.5rem;
+  }
 
-    .mt-4 {
-      margin-top: 2rem;
-    }
+  .mt-4 {
+    margin-top: 2rem;
+  }
 
-    .mb-1 {
-      margin-bottom: 0.5rem;
-    }
+  .mb-1 {
+    margin-bottom: 0.5rem;
+  }
 
-    .mb-2 {
-      margin-bottom: 1rem;
-    }
+  .mb-2 {
+    margin-bottom: 1rem;
+  }
 
-    .mb-3 {
-      margin-bottom: 1.5rem;
-    }
+  .mb-3 {
+    margin-bottom: 1.5rem;
+  }
 
-    .mb-4 {
-      margin-bottom: 2rem;
-    }
+  .mb-4 {
+    margin-bottom: 2rem;
+  }
 
-    .p-1 {
-      padding: 0.5rem;
-    }
+  .p-1 {
+    padding: 0.5rem;
+  }
 
-    .p-2 {
-      padding: 1rem;
-    }
+  .p-2 {
+    padding: 1rem;
+  }
 
-    .p-3 {
-      padding: 1.5rem;
-    }
+  .p-3 {
+    padding: 1.5rem;
+  }
 
-    .p-4 {
-      padding: 2rem;
-    }
+  .p-4 {
+    padding: 2rem;
+  }
 
-    .grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
+  .grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 
-    /* ========================================
+  /* ========================================
    RESPONSIVE DESIGN
    ======================================== */
 
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.25rem;
-      }
-
-      h2 {
-        font-size: 1.65rem;
-      }
-
-      h3 {
-        font-size: 1.25rem;
-      }
-
-      .card {
-        padding: 1.75rem;
-        border-radius: 20px;
-      }
-
-      .glass-card {
-        padding: 1.5rem;
-      }
-
-      .result-value {
-        font-size: 2.75rem;
-      }
-
-      .result-card {
-        padding: 2rem;
-      }
-
-      button {
-        padding: 14px 28px;
-        font-size: 0.95rem;
-      }
-
-      input,
-      select,
-      textarea {
-        padding: 12px 16px;
-        font-size: 0.9rem;
-      }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.25rem;
     }
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.85rem;
-      }
-
-      h2 {
-        font-size: 1.45rem;
-      }
-
-      .card {
-        padding: 1.5rem;
-      }
-
-      .result-value {
-        font-size: 2.25rem;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
+    h2 {
+      font-size: 1.65rem;
     }
 
-    /* ========================================
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    .card {
+      padding: 1.75rem;
+      border-radius: 20px;
+    }
+
+    .glass-card {
+      padding: 1.5rem;
+    }
+
+    .result-value {
+      font-size: 2.75rem;
+    }
+
+    .result-card {
+      padding: 2rem;
+    }
+
+    button {
+      padding: 14px 28px;
+      font-size: 0.95rem;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 12px 16px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.85rem;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+    }
+
+    .card {
+      padding: 1.5rem;
+    }
+
+    .result-value {
+      font-size: 2.25rem;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  /* ========================================
    PERFORMANCE OPTIMIZATIONS
    ======================================== */
 
-    @media (prefers-reduced-motion: reduce) {
+  @media (prefers-reduced-motion: reduce) {
 
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
+  }
 
-    /* ========================================
+  /* ========================================
    MIND-BENDING ANIMATIONS & COMPONENTS
    ======================================== */
 
-    /* Liquid Border Animation */
-    @keyframes liquidFlow {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
+  /* Liquid Border Animation */
+  @keyframes liquidFlow {
+    0% {
+      background-position: 0% 50%;
     }
 
-    @keyframes neonPulse {
-      0% {
-        box-shadow: 0 0 5px rgba(134, 239, 172, 0.2), 0 0 10px rgba(134, 239, 172, 0.2);
-      }
-
-      50% {
-        box-shadow: 0 0 15px rgba(134, 239, 172, 0.5), 0 0 20px rgba(134, 239, 172, 0.3);
-      }
-
-      100% {
-        box-shadow: 0 0 5px rgba(134, 239, 172, 0.2), 0 0 10px rgba(134, 239, 172, 0.2);
-      }
+    50% {
+      background-position: 100% 50%;
     }
 
-    @keyframes unfold3D {
-      from {
-        opacity: 0;
-        transform: perspective(1000px) rotateX(-20deg) translateY(-10px) scale(0.95);
-      }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
-      to {
-        opacity: 1;
-        transform: perspective(1000px) rotateX(0) translateY(0) scale(1);
-      }
+  @keyframes neonPulse {
+    0% {
+      box-shadow: 0 0 5px rgba(134, 239, 172, 0.2), 0 0 10px rgba(134, 239, 172, 0.2);
     }
 
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-3px);
-      }
+    50% {
+      box-shadow: 0 0 15px rgba(134, 239, 172, 0.5), 0 0 20px rgba(134, 239, 172, 0.3);
     }
 
-    /* Living Input Container */
-    .living-input-container {
-      position: relative;
-      border-radius: 16px;
-      padding: 2px;
-      /* Space for the border */
-      background: linear-gradient(90deg, #2d5016, #4a7c2c, #86efac, #d4af37, #2d5016);
-      background-size: 300% 300%;
-      animation: liquidFlow 8s ease infinite;
-      transition: all 0.3s ease;
+    100% {
+      box-shadow: 0 0 5px rgba(134, 239, 172, 0.2), 0 0 10px rgba(134, 239, 172, 0.2);
+    }
+  }
+
+  @keyframes unfold3D {
+    from {
+      opacity: 0;
+      transform: perspective(1000px) rotateX(-20deg) translateY(-10px) scale(0.95);
     }
 
-    .living-input-container:focus-within {
-      animation: liquidFlow 3s linear infinite;
-      box-shadow: 0 0 15px rgba(134, 239, 172, 0.4);
-      transform: scale(1.01);
+    to {
+      opacity: 1;
+      transform: perspective(1000px) rotateX(0) translateY(0) scale(1);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
     }
 
-    .living-input {
-      width: 100%;
-      border: none;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 16px 20px;
-      font-size: 1rem;
-      color: var(--soil-dark);
-      outline: none;
-      transition: all 0.3s ease;
+    50% {
+      transform: translateY(-3px);
     }
+  }
 
-    .living-input:focus {
-      background: white;
-    }
+  /* Living Input Container */
+  .living-input-container {
+    position: relative;
+    border-radius: 16px;
+    padding: 2px;
+    /* Space for the border */
+    background: linear-gradient(90deg, #2d5016, #4a7c2c, #86efac, #d4af37, #2d5016);
+    background-size: 300% 300%;
+    animation: liquidFlow 8s ease infinite;
+    transition: all 0.3s ease;
+  }
 
-    /* Holographic Dropdown */
-    .hologram-dropdown {
-      position: relative;
-      cursor: pointer;
-      perspective: 1000px;
-      margin-bottom: 1.5rem;
-    }
+  .living-input-container:focus-within {
+    animation: liquidFlow 3s linear infinite;
+    box-shadow: 0 0 15px rgba(134, 239, 172, 0.4);
+    transform: scale(1.01);
+  }
 
-    .hologram-trigger {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(74, 124, 44, 0.3);
-      border-radius: 16px;
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 12px rgba(45, 80, 22, 0.1);
-    }
+  .living-input {
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 16px 20px;
+    font-size: 1rem;
+    color: var(--soil-dark);
+    outline: none;
+    transition: all 0.3s ease;
+  }
 
-    .hologram-trigger:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(45, 80, 22, 0.15);
-      border-color: var(--primary-green-light);
-    }
+  .living-input:focus {
+    background: white;
+  }
 
-    .hologram-trigger.active {
-      background: white;
-      border-color: var(--accent-gold);
-      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
-    }
+  /* Holographic Dropdown */
+  .hologram-dropdown {
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+    margin-bottom: 1.5rem;
+  }
 
-    .hologram-menu {
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(74, 124, 44, 0.1);
-      z-index: 100;
-      max-height: 300px;
-      overflow-y: auto;
-      animation: unfold3D 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-      transform-origin: top center;
-      padding: 8px;
-    }
+  .hologram-trigger {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(74, 124, 44, 0.3);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(45, 80, 22, 0.1);
+  }
 
-    .hologram-option {
-      padding: 12px 16px;
-      border-radius: 10px;
-      transition: all 0.2s ease;
-      color: var(--soil-dark);
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+  .hologram-trigger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(45, 80, 22, 0.15);
+    border-color: var(--primary-green-light);
+  }
 
-    .hologram-option:hover {
-      background: linear-gradient(90deg, rgba(134, 239, 172, 0.2), transparent);
-      color: var(--primary-green);
-      transform: translateX(5px);
-      padding-left: 20px;
-    }
+  .hologram-trigger.active {
+    background: white;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+  }
 
-    .hologram-option.selected {
-      background: var(--gradient-primary);
-      color: white;
-    }
+  .hologram-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(74, 124, 44, 0.1);
+    z-index: 100;
+    max-height: 300px;
+    overflow-y: auto;
+    animation: unfold3D 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: top center;
+    padding: 8px;
+  }
 
-    /* Custom Scrollbar for Dropdown */
-    .hologram-menu::-webkit-scrollbar {
-      width: 6px;
-    }
+  .hologram-option {
+    padding: 12px 16px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    color: var(--soil-dark);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
-    .hologram-menu::-webkit-scrollbar-track {
-      background: transparent;
-    }
+  .hologram-option:hover {
+    background: linear-gradient(90deg, rgba(134, 239, 172, 0.2), transparent);
+    color: var(--primary-green);
+    transform: translateX(5px);
+    padding-left: 20px;
+  }
 
-    .hologram-menu::-webkit-scrollbar-thumb {
-      background: rgba(74, 124, 44, 0.2);
-      border-radius: 3px;
-    }
+  .hologram-option.selected {
+    background: var(--gradient-primary);
+    color: white;
+  }
 
-    .hologram-menu::-webkit-scrollbar-thumb:hover {
-      background: rgba(74, 124, 44, 0.5);
-    }
+  /* Custom Scrollbar for Dropdown */
+  .hologram-menu::-webkit-scrollbar {
+    width: 6px;
+  }
 
-    /* Magnetic Button Effect */
-    .magnetic-btn {
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
+  .hologram-menu::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-    .magnetic-btn::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
-      transform: scale(0);
-      transition: transform 0.6s ease;
-      pointer-events: none;
-    }
+  .hologram-menu::-webkit-scrollbar-thumb {
+    background: rgba(74, 124, 44, 0.2);
+    border-radius: 3px;
+  }
 
-    .magnetic-btn:hover::after {
-      transform: scale(1);
-    }
+  .hologram-menu::-webkit-scrollbar-thumb:hover {
+    background: rgba(74, 124, 44, 0.5);
+  }
+
+  /* Magnetic Button Effect */
+  .magnetic-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .magnetic-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+    transform: scale(0);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+  }
+
+  .magnetic-btn:hover::after {
+    transform: scale(1);
+  }
+}
