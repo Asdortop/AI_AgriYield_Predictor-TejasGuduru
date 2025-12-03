@@ -433,6 +433,10 @@ frontend/
    ```
    Frontend will run on `http://localhost:3000`
 
+### Or Try the Live Demo
+
+Don't want to run locally? **[Try the live application here!](https://ai-agriyield-predictor-frontend.onrender.com)** 🚀
+
 ---
 
 ## 📁 Project Structure
