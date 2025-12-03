@@ -25,6 +25,28 @@ This project implements an end-to-end machine learning pipeline for predicting a
 
 ---
 
+## 📸 Application Screenshots
+
+### Prediction Interface
+The application features a modern, agricultural-themed UI with an intuitive prediction form:
+
+![Prediction Form](screenshots/prediction-form.png)
+*Clean and user-friendly interface for entering crop parameters*
+
+### Making Predictions
+Fill in the agricultural parameters and get instant yield predictions:
+
+![Prediction Input](screenshots/prediction-input.png)
+*Example: Predicting banana yield in Kerala during Kharif season*
+
+### Results Display
+Get accurate yield predictions with model performance metrics:
+
+![Prediction Results](screenshots/prediction-result.png)
+*Predicted yield: 9.67 tons/hectare with 88% R² accuracy*
+
+---
+
 ## 🔄 Project Workflow
 
 This project follows a systematic machine learning workflow from data collection to deployment:
