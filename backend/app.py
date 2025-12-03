@@ -12,9 +12,7 @@ from utils.shap_explain import explain_shap
 
 app = Flask(__name__)
 
-# Configure CORS explicitly
-# Allow CORS from all origins (simple and permissive)
-CORS(app, resources={r"/*": {"origins": "*"}})
+# Manual CORS handler (replaces flask-cors to avoid conflicts)
 
 # Manual CORS handler (fail-safe)
 @app.after_request
