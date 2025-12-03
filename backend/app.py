@@ -28,9 +28,7 @@ def handle_preflight():
     from flask import request
     if request.method == "OPTIONS":
         response = app.make_default_options_response()
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-        response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+        # Don't add headers here - after_request will handle it
         return response
 
 # ----------------------------
