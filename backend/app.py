@@ -16,6 +16,25 @@ app = Flask(__name__)
 # Allow CORS from all origins (simple and permissive)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
+# Manual CORS handler (fail-safe)
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    return response
+
+# Handle OPTIONS requests (CORS preflight)
+@app.before_request
+def handle_preflight():
+    from flask import request
+    if request.method == "OPTIONS":
+        response = app.make_default_options_response()
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+        response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+        return response
+
 # ----------------------------
 # Health Check Endpoint
 # ----------------------------
